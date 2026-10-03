@@ -10,6 +10,9 @@ GitHub has the full notes and the measurements behind them.
   row-invariance contract kept, so drafted replies equal serial ones. One 32 GB V100 serves about 164,000 tokens with
   the drafter and finds a needle at 158,000. On one V100, 175-190 tok/s on code and 55-80 on chat with drafts, 34-48
   tok/s at 63,000 to 158,000 tokens of context.
+- **Nemotron 3.5 Lightning on Tesla V100.** Its routed experts run on an `mma.m8n8k4` kernel over the same packed
+  blocks, with pair-invariant bits, and its prompts on the dense fp16 cuBLASLt path. One 32 GB V100 serves a
+  240,000-token window and finds a needle at 231,786 tokens; prompts fill at 2,500 to 3,400 tok/s and replies decode at 170 to 250 tok/s with MTP drafts.
 
 ## 0.6.3 (2 Oct 2026)
 

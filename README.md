@@ -272,6 +272,10 @@ as on newer GPUs, and its bits are its own. PyTorch's CUDA 12 wheels include sm_
 and two ranks need working NCCL peer access between the cards. Measurements
 and the launch line are in [the recipe](docs/recipes/qwen3.8-27b.md#tesla-v100-sm_70).
 
+Nemotron 3.5 Lightning's MLX checkpoint serves there too: its routed experts get an `mma.m8n8k4` kernel over the
+same packed blocks, and its prompt matmuls take the same cuBLASLt path. See
+[its recipe](docs/recipes/nemotron-3.5.md#tesla-v100-sm_70).
+
 ## Measurements
 
 Each release's notes give its measured decode, prompt and concurrency numbers against the previous release and the
